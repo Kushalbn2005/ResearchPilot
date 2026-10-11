@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+pydantic-settings
+python-multipart
+pymupdf
+sqlalchemy
+psycopg[binary]
+qdrant-client
+sentence-transformers
+rank-bm25
+pytest
+httpx
