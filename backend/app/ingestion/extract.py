@@ -2,7 +2,7 @@ import collections
 import re
 from dataclasses import dataclass
 
-import fitz  # PyMuPDF
+import pymupdf as fitz  # PyMuPDF
 
 SECTION_RE = re.compile(
     r"^(?:\d+(?:\.\d+)*\.?\s+|[IVX]+\.\s+)?"

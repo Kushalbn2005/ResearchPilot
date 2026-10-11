@@ -1,6 +1,7 @@
 import logging
 import threading
 
+from .bm25 import mark_dirty
 from .db import Chunk, Document, SessionLocal
 from .indexing import index_chunks
 from .ingestion.chunk import chunk_blocks
@@ -30,6 +31,7 @@ def _ingest(document_id: str, data: bytes) -> None:
             doc.title = title
             doc.status = "ready"
             db.commit()
+            mark_dirty()  # BM25 index is rebuilt lazily on next search
         except Exception as e:
             log.exception("Ingestion failed for %s", document_id)
             db.rollback()

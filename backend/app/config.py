@@ -9,6 +9,8 @@ class Settings(BaseSettings):
     llm_api_key: str = ""
     llm_model: str = "llama-3.3-70b-versatile"  # verify it is still offered on your Groq account
     embedding_model: str = "BAAI/bge-small-en-v1.5"  # 384-dim
+    reranker_model: str = "cross-encoder/ms-marco-MiniLM-L-6-v2"  # ~90 MB, CPU-friendly
+    rerank_candidates: int = 30  # how many fused candidates go to the reranker
     upload_dir: str = "uploads"
     max_upload_mb: int = 25
     max_pdf_pages: int = 60

@@ -8,12 +8,14 @@ from pydantic import BaseModel
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
+from . import qa, retrieval
+from .bm25 import mark_dirty
 from .config import settings
 from .db import Base, Chunk, Document, SessionLocal, engine
-from .indexing import delete_document_vectors, ensure_collection, vector_search, warm_up
+from .indexing import delete_document_vectors, ensure_collection, warm_up
 from .ingestion.validate import InvalidPDF, validate_pdf
 from .pipeline import ingest_document
-from . import qa
+from .rerank import warm_up as warm_up_reranker
 
 
 @asynccontextmanager
@@ -25,7 +27,8 @@ async def lifespan(app: FastAPI):
             {"status": "failed", "error": "Interrupted by a server restart; delete and re-upload."},
             synchronize_session=False)
         db.commit()
-    warm_up()  # load the embedding model once, in the main thread
+    warm_up()           # embedding model, loaded once in the main thread
+    warm_up_reranker()  # cross-encoder, same reason
     ensure_collection()
     os.makedirs(settings.upload_dir, exist_ok=True)
     yield
@@ -97,40 +100,42 @@ def delete_document(doc_id: str, db: Session = Depends(get_db)):
         os.remove(d.stored_path)
     db.delete(d)
     db.commit()
+    mark_dirty()
 
 
-def _hydrate(hits: list[dict], db: Session) -> list[dict]:
-    ids = [h["chunk_id"] for h in hits]
-    rows = {c.id: c for c in db.scalars(select(Chunk).where(Chunk.id.in_(ids)))}
-    return [{
-        "chunk_id": h["chunk_id"], "score": round(h["score"], 4),
-        "document_id": rows[h["chunk_id"]].document_id,
-        "section": rows[h["chunk_id"]].section,
-        "page_start": rows[h["chunk_id"]].page_start,
-        "page_end": rows[h["chunk_id"]].page_end,
-        "text": rows[h["chunk_id"]].text,
-    } for h in hits if h["chunk_id"] in rows]
+def _check_mode(mode: str) -> None:
+    if mode not in retrieval.MODES:
+        raise HTTPException(400, f"mode must be one of {list(retrieval.MODES)}")
 
 
 @app.get("/search")
-def search(q: str, k: int = 10, document_id: str | None = None, db: Session = Depends(get_db)):
-    """Retrieval inspection endpoint: look at what the retriever returns BEFORE adding an LLM."""
-    hits = vector_search(q, k=min(k, 30), document_ids=[document_id] if document_id else None)
-    return _hydrate(hits, db)
+def search(q: str, k: int = 10, document_id: str | None = None,
+           mode: str = "hybrid_rerank", db: Session = Depends(get_db)):
+    """Retrieval inspection. Try mode=vector | bm25 | hybrid | hybrid_rerank on the same query
+    and compare; each result shows its rank in each retriever."""
+    _check_mode(mode)
+    return retrieval.search(db, q, k=min(k, 30),
+                            document_ids=[document_id] if document_id else None, mode=mode)
 
 
 class AskRequest(BaseModel):
     question: str
     document_ids: list[str] | None = None
     k: int = 6
+    mode: str = "hybrid_rerank"
 
 
 @app.post("/ask")
 def ask(req: AskRequest, db: Session = Depends(get_db)):
-    hits = vector_search(req.question, k=min(req.k, 12), document_ids=req.document_ids)
-    passages = _hydrate(hits, db)
+    _check_mode(req.mode)
+    passages = retrieval.search(db, req.question, k=min(req.k, 12),
+                                document_ids=req.document_ids, mode=req.mode)
     if not passages:
         return {"answer": "No indexed documents to search.", "sufficient_evidence": False, "citations": []}
-    result = qa.answer(req.question, passages)
-    result["retrieved"] = [{"chunk_id": p["chunk_id"], "score": p["score"]} for p in passages]
+    try:
+        result = qa.answer(req.question, passages)
+    except Exception as e:  # provider errors (bad model name, rate limit, network)
+        raise HTTPException(status_code=502, detail=f"LLM call failed ({type(e).__name__}): {str(e)[:300]}")
+    result["retrieved"] = [{k: p[k] for k in ("chunk_id", "score", "vector_rank", "bm25_rank", "rerank_score")}
+                           for p in passages]
     return result
