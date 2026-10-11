@@ -10,3 +10,5 @@ sentence-transformers
 rank-bm25
 pytest
 httpx
+groq
+psycopg
