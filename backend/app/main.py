@@ -2,7 +2,7 @@ import os
 import uuid
 from contextlib import asynccontextmanager
 
-from fastapi import BackgroundTasks, Depends, FastAPI, File, HTTPException, UploadFile
+from fastapi import BackgroundTasks, Depends, FastAPI, File, HTTPException, Query, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from sqlalchemy import select
@@ -11,7 +11,9 @@ from sqlalchemy.orm import Session
 from . import qa, retrieval
 from .bm25 import mark_dirty
 from .config import settings
-from .db import Base, Chunk, Document, SessionLocal, engine
+from .db import Base, Chunk, Document, ExtractionRecord, SessionLocal, engine
+from .extraction.compare import compare_extractions
+from .extraction.extract import run_extraction
 from .indexing import delete_document_vectors, ensure_collection, warm_up
 from .ingestion.validate import InvalidPDF, validate_pdf
 from .pipeline import ingest_document
@@ -96,6 +98,7 @@ def delete_document(doc_id: str, db: Session = Depends(get_db)):
         raise HTTPException(404, "Document not found")
     delete_document_vectors(doc_id)
     db.query(Chunk).filter(Chunk.document_id == doc_id).delete()
+    db.query(ExtractionRecord).filter(ExtractionRecord.document_id == doc_id).delete()
     if os.path.exists(d.stored_path):
         os.remove(d.stored_path)
     db.delete(d)
@@ -139,3 +142,51 @@ def ask(req: AskRequest, db: Session = Depends(get_db)):
     result["retrieved"] = [{k: p[k] for k in ("chunk_id", "score", "vector_rank", "bm25_rank", "rerank_score")}
                            for p in passages]
     return result
+
+
+# ---------------- Phase 4: structured extraction ----------------
+
+@app.post("/documents/{doc_id}/extract")
+def extract_document(doc_id: str, force: bool = False, db: Session = Depends(get_db)):
+    """Extract problem/method/datasets/metrics/results/baselines/limitations, each with citations."""
+    d = db.get(Document, doc_id)
+    if not d:
+        raise HTTPException(404, "Document not found")
+    if d.status != "ready":
+        raise HTTPException(409, f"Document is {d.status}; extraction needs status 'ready'")
+    rec = db.get(ExtractionRecord, doc_id)
+    if rec and not force:
+        return rec.data
+    data = run_extraction(db, doc_id)
+    if rec:
+        rec.data, rec.model = data, settings.llm_model
+    else:
+        db.add(ExtractionRecord(document_id=doc_id, data=data, model=settings.llm_model))
+    db.commit()
+    return data
+
+
+@app.get("/documents/{doc_id}/extraction")
+def get_extraction(doc_id: str, db: Session = Depends(get_db)):
+    rec = db.get(ExtractionRecord, doc_id)
+    if not rec:
+        raise HTTPException(404, "No extraction yet; call POST /documents/{id}/extract first")
+    return rec.data
+
+
+@app.get("/matrix")
+def matrix(document_ids: list[str] | None = Query(None), db: Session = Depends(get_db)):
+    """Comparison matrix: one row per extracted paper (all of them, or the ids you pass)."""
+    q = select(ExtractionRecord, Document).join(Document, Document.id == ExtractionRecord.document_id)
+    if document_ids:
+        q = q.where(ExtractionRecord.document_id.in_(document_ids))
+    return [{"document_id": d.id, "title": d.title, "filename": d.filename, "fields": rec.data["fields"], "warnings": rec.data.get("warnings", [])}
+            for rec, d in db.execute(q).all()]
+
+
+@app.get("/compare")
+def compare(doc_a: str, doc_b: str, db: Session = Depends(get_db)):
+    a, b = db.get(ExtractionRecord, doc_a), db.get(ExtractionRecord, doc_b)
+    if not a or not b:
+        raise HTTPException(404, "Both documents need an extraction first")
+    return compare_extractions(a.data, b.data)
