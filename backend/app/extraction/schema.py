@@ -1,4 +1,5 @@
 import re
+import unicodedata
 
 TEXT_FIELDS = ("problem", "method")
 LIST_FIELDS = ("limitations", "datasets", "metrics", "baselines")
@@ -53,7 +54,7 @@ def squash(s: str) -> str:
 
 def words(s: str) -> str:
     """Lowercased alphanumeric words joined by single spaces: 'SPEI-3' -> 'spei 3', '0.214' -> '0 214'."""
-    return " ".join(re.findall(r"[a-z0-9]+", s.lower()))
+    return " ".join(re.findall(r"[a-z0-9]+", unicodedata.normalize("NFKC", s).lower()))  # NFKC: "ﬁ" -> "fi"
 
 
 def contains_words(haystack_words: str, needle: str) -> bool:

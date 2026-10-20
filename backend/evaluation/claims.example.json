@@ -1,0 +1,177 @@
+{
+  "_instructions": "Draft Phase 5 claims evaluation file. 'expected' is a provisional gold label and must be verified against the actual PDFs before use. supported | challenged | mixed | insufficient. Use 'documents' to restrict retrieval to named files. Set expected_direct_conflict true only if the source explicitly presents evidence directly contradicting the claim; do not confuse missing support or non-comparable studies with direct conflict.",
+  "claims": [
+    {
+      "id": "c01",
+      "claim": "SVR gives the best SPEI forecasting performance among ARIMA, TDNN and SVR in the Southern Telangana study.",
+      "expected": "supported",
+      "documents": [
+        "s44292-025-00070-6.pdf"
+      ],
+      "expected_direct_conflict": false,
+      "_note": "Draft expectation based on the example claim supplied by the user; verify the model ranking and reported metrics against the PDF."
+    },
+    {
+      "id": "c02",
+      "claim": "The Informer model outperforms the LSTM and ARIMA baselines for SPEI forecasting at every timescale evaluated in the Yellow River Basin study.",
+      "expected": "supported",
+      "documents": [
+        "atmosphere-14-00951-v2.pdf"
+      ],
+      "expected_direct_conflict": false,
+      "_note": "Verify the result for every timescale; revise expected label if the paper reports exceptions."
+    },
+    {
+      "id": "c03",
+      "claim": "LSTM outperforms the Informer model for drought forecasting in all experimental settings.",
+      "expected": "challenged",
+      "documents": [
+        "atmosphere-14-00951-v2.pdf",
+        "s12145-025-01813-0.pdf"
+      ],
+      "expected_direct_conflict": false,
+      "_note": "Broad universal claim; verify whether the papers provide direct counter-evidence. Do not label merely from absence of support."
+    },
+    {
+      "id": "c04",
+      "claim": "Random forests outperform every deep-learning model for drought prediction.",
+      "expected": "insufficient",
+      "documents": [
+        "s12145-025-01813-0.pdf",
+        "s44292-025-00070-6.pdf",
+        "atmosphere-14-00951-v2.pdf",
+        "s00704-026-06298-5.pdf",
+        "s42452-025-07649-z.pdf"
+      ],
+      "expected_direct_conflict": false,
+      "_note": "The universal claim requires comparable evidence across models and studies; verify the available comparisons."
+    },
+    {
+      "id": "c05",
+      "claim": "The Southern Telangana study uses SPEI for drought forecasting.",
+      "expected": "supported",
+      "documents": [
+        "s44292-025-00070-6.pdf"
+      ],
+      "expected_direct_conflict": false,
+      "_note": "Verify the index named in the paper."
+    },
+    {
+      "id": "c06",
+      "claim": "The Wavelet-LSTM study uses SPI rather than SPEI as its drought index.",
+      "expected": "supported",
+      "documents": [
+        "s42452-025-07649-z.pdf"
+      ],
+      "expected_direct_conflict": false,
+      "_note": "Verify the index and whether the wording 'rather than SPEI' is justified."
+    },
+    {
+      "id": "c07",
+      "claim": "The Informer drought-forecasting study focuses on the Yellow River Basin.",
+      "expected": "supported",
+      "documents": [
+        "atmosphere-14-00951-v2.pdf"
+      ],
+      "expected_direct_conflict": false,
+      "_note": "Verify the study region in the paper."
+    },
+    {
+      "id": "c08",
+      "claim": "The Southern Telangana study compares ARIMA, TDNN and SVR.",
+      "expected": "supported",
+      "documents": [
+        "s44292-025-00070-6.pdf"
+      ],
+      "expected_direct_conflict": false,
+      "_note": "Verify the complete set of compared models."
+    },
+    {
+      "id": "c09",
+      "claim": "SPEI and SPI are identical drought indices and can be treated as interchangeable in every comparison.",
+      "expected": "challenged",
+      "documents": [
+        "s44292-025-00070-6.pdf",
+        "atmosphere-14-00951-v2.pdf",
+        "s42452-025-07649-z.pdf"
+      ],
+      "expected_direct_conflict": false,
+      "_note": "Check the papers' index definitions and context; the claim's universal equivalence is scientifically overbroad."
+    },
+    {
+      "id": "c10",
+      "claim": "A lower RMSE in one study proves that its model is better than models evaluated in other studies, regardless of dataset or forecast horizon.",
+      "expected": "challenged",
+      "documents": [
+        "s44292-025-00070-6.pdf",
+        "atmosphere-14-00951-v2.pdf",
+        "s00704-026-06298-5.pdf",
+        "s42452-025-07649-z.pdf"
+      ],
+      "expected_direct_conflict": false,
+      "_note": "Assess comparability limitations. A challenge may come from methodological context rather than a direct opposite numerical result."
+    },
+    {
+      "id": "c11",
+      "claim": "The five papers establish that an LSTM model will predict drought severity in Raichur, Karnataka, accurately in July 2027.",
+      "expected": "insufficient",
+      "documents": [
+        "s12145-025-01813-0.pdf",
+        "s44292-025-00070-6.pdf",
+        "atmosphere-14-00951-v2.pdf",
+        "s00704-026-06298-5.pdf",
+        "s42452-025-07649-z.pdf"
+      ],
+      "expected_direct_conflict": false,
+      "_note": "No paper-specific evidence should be assumed to establish this future local prediction."
+    },
+    {
+      "id": "c12",
+      "claim": "The Nepal drought-forecasting paper evaluates an LSTM-based approach.",
+      "expected": "supported",
+      "documents": [
+        "s00704-026-06298-5.pdf"
+      ],
+      "expected_direct_conflict": false,
+      "_note": "Verify the model and study scope in the PDF."
+    },
+    {
+      "id": "c13",
+      "claim": "The Wavelet-LSTM approach is evaluated against baseline models in its study.",
+      "expected": "supported",
+      "documents": [
+        "s42452-025-07649-z.pdf"
+      ],
+      "expected_direct_conflict": false,
+      "_note": "Verify which baselines are actually used and how the comparison is reported."
+    },
+    {
+      "id": "c14",
+      "claim": "All five papers use the same drought index, the same study region and the same forecast horizon.",
+      "expected": "challenged",
+      "documents": [
+        "s12145-025-01813-0.pdf",
+        "s44292-025-00070-6.pdf",
+        "atmosphere-14-00951-v2.pdf",
+        "s00704-026-06298-5.pdf",
+        "s42452-025-07649-z.pdf"
+      ],
+      "expected_direct_conflict": false,
+      "_note": "Verify the indices, regions and horizons across all five papers."
+    },
+    {
+      "id": "c15",
+      "claim": "The five papers prove that adding NDVI improves drought forecasting accuracy for every model and region.",
+      "expected": "insufficient",
+      "documents": [
+        "s12145-025-01813-0.pdf",
+        "s44292-025-00070-6.pdf",
+        "atmosphere-14-00951-v2.pdf",
+        "s00704-026-06298-5.pdf",
+        "s42452-025-07649-z.pdf"
+      ],
+      "expected_direct_conflict": false,
+      "_note": "Verify whether these papers test NDVI; do not infer a universal effect from studies that may not evaluate it."
+    }
+  ]
+}

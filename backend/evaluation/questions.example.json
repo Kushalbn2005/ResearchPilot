@@ -1,0 +1,903 @@
+{
+  "_instructions": "Draft Phase 6 evaluation dataset for the five drought-prediction papers. IMPORTANT: This is a question-set draft, not a verified gold benchmark. For every answerable item, inspect the actual PDF, confirm the answer, and fill gold[].pages with PDF viewer page indices (1-based) and gold[].phrases with exact verbatim text. Do not tune prompts or code against the test split. Keep approximately one-third of questions in test.",
+  "papers": {
+    "p1": "s12145-025-01813-0.pdf",
+    "p2": "s44292-025-00070-6.pdf",
+    "p3": "atmosphere-14-00951-v2.pdf",
+    "p4": "s00704-026-06298-5.pdf",
+    "p5": "s42452-025-07649-z.pdf"
+  },
+  "questions": [
+    {
+      "id": "q01",
+      "type": "factual",
+      "split": "dev",
+      "answerable": true,
+      "question": "What drought index is used by the STAT-LSTM study?",
+      "gold": [
+        {
+          "file": "s12145-025-01813-0.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "SPEI"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q02",
+      "type": "factual",
+      "split": "dev",
+      "answerable": true,
+      "question": "What is the main forecasting task investigated by the STAT-LSTM study?",
+      "gold": [
+        {
+          "file": "s12145-025-01813-0.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "drought",
+        "forecasting"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q03",
+      "type": "factual",
+      "split": "dev",
+      "answerable": true,
+      "question": "Which drought index is used in the Southern Telangana forecasting study?",
+      "gold": [
+        {
+          "file": "s44292-025-00070-6.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "SPEI"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q04",
+      "type": "factual",
+      "split": "dev",
+      "answerable": true,
+      "question": "Which three forecasting approaches are compared in the Southern Telangana study?",
+      "gold": [
+        {
+          "file": "s44292-025-00070-6.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "ARIMA",
+        "TDNN",
+        "SVR"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q05",
+      "type": "factual",
+      "split": "dev",
+      "answerable": true,
+      "question": "Which drought index is used by the Informer forecasting study?",
+      "gold": [
+        {
+          "file": "atmosphere-14-00951-v2.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "SPEI"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q06",
+      "type": "factual",
+      "split": "dev",
+      "answerable": true,
+      "question": "Which river basin is the geographical focus of the Informer drought-forecasting study?",
+      "gold": [
+        {
+          "file": "atmosphere-14-00951-v2.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "Yellow River Basin"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q07",
+      "type": "factual",
+      "split": "dev",
+      "answerable": true,
+      "question": "Which drought index is used in the Nepal drought forecasting study?",
+      "gold": [
+        {
+          "file": "s00704-026-06298-5.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "SPEI"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q08",
+      "type": "factual",
+      "split": "dev",
+      "answerable": true,
+      "question": "Which modelling approach is the focus of the Nepal drought forecasting study?",
+      "gold": [
+        {
+          "file": "s00704-026-06298-5.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "LSTM"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q09",
+      "type": "factual",
+      "split": "dev",
+      "answerable": true,
+      "question": "Which drought index is used by the Wavelet-LSTM drought modelling study?",
+      "gold": [
+        {
+          "file": "s42452-025-07649-z.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "SPI"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q10",
+      "type": "factual",
+      "split": "dev",
+      "answerable": true,
+      "question": "What hybrid modelling approach is investigated in the Wavelet-LSTM study?",
+      "gold": [
+        {
+          "file": "s42452-025-07649-z.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "Wavelet",
+        "LSTM"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q11",
+      "type": "exact_term",
+      "split": "dev",
+      "answerable": true,
+      "question": "What does the acronym SPEI stand for in the drought-forecasting papers?",
+      "gold": [
+        {
+          "file": "s12145-025-01813-0.pdf",
+          "pages": [],
+          "phrases": []
+        },
+        {
+          "file": "s44292-025-00070-6.pdf",
+          "pages": [],
+          "phrases": []
+        },
+        {
+          "file": "atmosphere-14-00951-v2.pdf",
+          "pages": [],
+          "phrases": []
+        },
+        {
+          "file": "s00704-026-06298-5.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "Standardized Precipitation Evapotranspiration Index"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q12",
+      "type": "exact_term",
+      "split": "dev",
+      "answerable": true,
+      "question": "What does the acronym SPI stand for in the Wavelet-LSTM paper?",
+      "gold": [
+        {
+          "file": "s42452-025-07649-z.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "Standardized Precipitation Index"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q13",
+      "type": "exact_term",
+      "split": "dev",
+      "answerable": true,
+      "question": "Which three model names appear in the Southern Telangana study's model comparison?",
+      "gold": [
+        {
+          "file": "s44292-025-00070-6.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "ARIMA",
+        "TDNN",
+        "SVR"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q14",
+      "type": "exact_term",
+      "split": "dev",
+      "answerable": true,
+      "question": "Which deep-learning architecture is named in the STAT-LSTM study title?",
+      "gold": [
+        {
+          "file": "s12145-025-01813-0.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "LSTM"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q15",
+      "type": "exact_term",
+      "split": "dev",
+      "answerable": true,
+      "question": "Which transformer-style model is named in the Yellow River Basin study title?",
+      "gold": [
+        {
+          "file": "atmosphere-14-00951-v2.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "Informer"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q16",
+      "type": "exact_term",
+      "split": "dev",
+      "answerable": true,
+      "question": "Which hybrid model family is named in the Wavelet-LSTM study title?",
+      "gold": [
+        {
+          "file": "s42452-025-07649-z.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "Wavelet-LSTM"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q17",
+      "type": "exact_term",
+      "split": "dev",
+      "answerable": true,
+      "question": "Which country is the study region for the Southern Telangana paper?",
+      "gold": [
+        {
+          "file": "s44292-025-00070-6.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "India"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q18",
+      "type": "exact_term",
+      "split": "dev",
+      "answerable": true,
+      "question": "Which country is the study region for the Nepal drought forecasting paper?",
+      "gold": [
+        {
+          "file": "s00704-026-06298-5.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "Nepal"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q19",
+      "type": "comparison",
+      "split": "dev",
+      "answerable": true,
+      "question": "Which drought indices are used by the Informer study and the Wavelet-LSTM study, respectively?",
+      "gold": [
+        {
+          "file": "atmosphere-14-00951-v2.pdf",
+          "pages": [],
+          "phrases": []
+        },
+        {
+          "file": "s42452-025-07649-z.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "SPEI",
+        "SPI"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q20",
+      "type": "comparison",
+      "split": "dev",
+      "answerable": true,
+      "question": "Compare the primary model named in the STAT-LSTM paper with the primary hybrid model named in the Wavelet-LSTM paper.",
+      "gold": [
+        {
+          "file": "s12145-025-01813-0.pdf",
+          "pages": [],
+          "phrases": []
+        },
+        {
+          "file": "s42452-025-07649-z.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "LSTM",
+        "Wavelet-LSTM"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q21",
+      "type": "comparison",
+      "split": "dev",
+      "answerable": true,
+      "question": "Which study focuses on Southern Telangana and which focuses on the Yellow River Basin?",
+      "gold": [
+        {
+          "file": "s44292-025-00070-6.pdf",
+          "pages": [],
+          "phrases": []
+        },
+        {
+          "file": "atmosphere-14-00951-v2.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "Southern Telangana",
+        "Yellow River Basin"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q22",
+      "type": "comparison",
+      "split": "dev",
+      "answerable": true,
+      "question": "Which of the five papers explicitly focuses on Nepal, and which focuses on India?",
+      "gold": [
+        {
+          "file": "s00704-026-06298-5.pdf",
+          "pages": [],
+          "phrases": []
+        },
+        {
+          "file": "s44292-025-00070-6.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "Nepal",
+        "India"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q23",
+      "type": "comparison",
+      "split": "dev",
+      "answerable": true,
+      "question": "Compare the drought indices used in the Southern Telangana study and the Wavelet-LSTM study.",
+      "gold": [
+        {
+          "file": "s44292-025-00070-6.pdf",
+          "pages": [],
+          "phrases": []
+        },
+        {
+          "file": "s42452-025-07649-z.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "SPEI",
+        "SPI"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q24",
+      "type": "comparison",
+      "split": "dev",
+      "answerable": true,
+      "question": "Which papers focus on LSTM-based approaches, and what differs in their named architectures?",
+      "gold": [
+        {
+          "file": "s12145-025-01813-0.pdf",
+          "pages": [],
+          "phrases": []
+        },
+        {
+          "file": "s00704-026-06298-5.pdf",
+          "pages": [],
+          "phrases": []
+        },
+        {
+          "file": "s42452-025-07649-z.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "STAT-LSTM",
+        "LSTM",
+        "Wavelet-LSTM"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q25",
+      "type": "comparison",
+      "split": "dev",
+      "answerable": true,
+      "question": "Which study names Informer as its central forecasting model, and which study names SVR among its comparison models?",
+      "gold": [
+        {
+          "file": "atmosphere-14-00951-v2.pdf",
+          "pages": [],
+          "phrases": []
+        },
+        {
+          "file": "s44292-025-00070-6.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "Informer",
+        "SVR"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q26",
+      "type": "comparison",
+      "split": "dev",
+      "answerable": true,
+      "question": "Compare the geographical study settings of the five papers.",
+      "gold": [
+        {
+          "file": "s12145-025-01813-0.pdf",
+          "pages": [],
+          "phrases": []
+        },
+        {
+          "file": "s44292-025-00070-6.pdf",
+          "pages": [],
+          "phrases": []
+        },
+        {
+          "file": "atmosphere-14-00951-v2.pdf",
+          "pages": [],
+          "phrases": []
+        },
+        {
+          "file": "s00704-026-06298-5.pdf",
+          "pages": [],
+          "phrases": []
+        },
+        {
+          "file": "s42452-025-07649-z.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "study region"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q27",
+      "type": "factual",
+      "split": "dev",
+      "answerable": true,
+      "question": "What input variables or data sources does the STAT-LSTM study use for drought prediction?",
+      "gold": [
+        {
+          "file": "s12145-025-01813-0.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "input variables"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q28",
+      "type": "factual",
+      "split": "dev",
+      "answerable": true,
+      "question": "What evaluation metrics are reported in the Southern Telangana study?",
+      "gold": [
+        {
+          "file": "s44292-025-00070-6.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "evaluation metrics"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q29",
+      "type": "factual",
+      "split": "dev",
+      "answerable": true,
+      "question": "Which forecast timescales or SPEI timescales are evaluated in the Informer study?",
+      "gold": [
+        {
+          "file": "atmosphere-14-00951-v2.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "timescale"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q30",
+      "type": "factual",
+      "split": "dev",
+      "answerable": true,
+      "question": "What temporal or SPEI timescales are examined in the Nepal drought forecasting study?",
+      "gold": [
+        {
+          "file": "s00704-026-06298-5.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "timescale"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q31",
+      "type": "factual",
+      "split": "dev",
+      "answerable": true,
+      "question": "What evaluation measures are used to assess the Wavelet-LSTM approach?",
+      "gold": [
+        {
+          "file": "s42452-025-07649-z.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "evaluation metrics"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q32",
+      "type": "factual",
+      "split": "dev",
+      "answerable": true,
+      "question": "What baseline models are used to evaluate the Wavelet-LSTM approach?",
+      "gold": [
+        {
+          "file": "s42452-025-07649-z.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "baseline models"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q33",
+      "type": "factual",
+      "split": "dev",
+      "answerable": true,
+      "question": "What baseline models are compared with Informer in the Yellow River Basin study?",
+      "gold": [
+        {
+          "file": "atmosphere-14-00951-v2.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "baseline models"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q34",
+      "type": "factual",
+      "split": "dev",
+      "answerable": true,
+      "question": "What are the main conclusions reported by the Southern Telangana study?",
+      "gold": [
+        {
+          "file": "s44292-025-00070-6.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "conclusions"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q35",
+      "type": "factual",
+      "split": "dev",
+      "answerable": true,
+      "question": "What limitations or future-work directions are stated in the STAT-LSTM study?",
+      "gold": [
+        {
+          "file": "s12145-025-01813-0.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "limitations"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q36",
+      "type": "exact_term",
+      "split": "test",
+      "answerable": true,
+      "question": "What NSE value does the Informer model report for SPEI24?",
+      "gold": [
+        {
+          "file": "atmosphere-14-00951-v2.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "NSE",
+        "SPEI24"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q37",
+      "type": "exact_term",
+      "split": "test",
+      "answerable": true,
+      "question": "Which statistical test, if any, is used to compare forecasting performance in the Southern Telangana study?",
+      "gold": [
+        {
+          "file": "s44292-025-00070-6.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "Diebold-Mariano"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q38",
+      "type": "factual",
+      "split": "test",
+      "answerable": true,
+      "question": "Which model performs best in the Southern Telangana study according to the authors, and what evidence supports that conclusion?",
+      "gold": [
+        {
+          "file": "s44292-025-00070-6.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "best-performing model"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q39",
+      "type": "factual",
+      "split": "test",
+      "answerable": true,
+      "question": "What quantitative performance result does the Informer study report for its longest evaluated SPEI timescale?",
+      "gold": [
+        {
+          "file": "atmosphere-14-00951-v2.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "performance result"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q40",
+      "type": "factual",
+      "split": "test",
+      "answerable": true,
+      "question": "What are the main reported findings of the Nepal LSTM drought-forecasting study?",
+      "gold": [
+        {
+          "file": "s00704-026-06298-5.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "findings"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q41",
+      "type": "factual",
+      "split": "test",
+      "answerable": true,
+      "question": "How does the Wavelet-LSTM approach perform relative to its stated baseline models?",
+      "gold": [
+        {
+          "file": "s42452-025-07649-z.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "performance comparison"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q42",
+      "type": "comparison",
+      "split": "test",
+      "answerable": true,
+      "question": "Can the best reported metric from the Southern Telangana paper be directly compared with the best reported metric from the Informer paper? Explain why or why not.",
+      "gold": [
+        {
+          "file": "s44292-025-00070-6.pdf",
+          "pages": [],
+          "phrases": []
+        },
+        {
+          "file": "atmosphere-14-00951-v2.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "metrics",
+        "dataset"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q43",
+      "type": "comparison",
+      "split": "test",
+      "answerable": true,
+      "question": "Compare the reported forecasting horizons in the Informer and Nepal studies.",
+      "gold": [
+        {
+          "file": "atmosphere-14-00951-v2.pdf",
+          "pages": [],
+          "phrases": []
+        },
+        {
+          "file": "s00704-026-06298-5.pdf",
+          "pages": [],
+          "phrases": []
+        }
+      ],
+      "answer_keywords": [
+        "forecast horizon"
+      ],
+      "_note": "DRAFT: verify the answer, exact PDF-viewer page index (1-based), and exact supporting phrase(s) against the downloaded PDF before benchmarking. Fill pages and phrases; do not treat suggested keywords as verified gold answers."
+    },
+    {
+      "id": "q44",
+      "type": "unanswerable",
+      "split": "test",
+      "answerable": false,
+      "question": "What exact drought severity will occur in Raichur, Karnataka, in July 2027 according to these five papers?",
+      "_note": "Expected to be unanswerable from this five-paper collection; confirm after indexing all selected PDFs."
+    },
+    {
+      "id": "q45",
+      "type": "unanswerable",
+      "split": "test",
+      "answerable": false,
+      "question": "Which of these five papers reports model accuracy on the ImageNet dataset?",
+      "_note": "Expected to be unanswerable from this five-paper collection; confirm after indexing all selected PDFs."
+    }
+  ]
+}

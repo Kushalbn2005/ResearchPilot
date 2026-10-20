@@ -54,3 +54,13 @@ class ExtractionRecord(Base):
     data: Mapped[dict] = mapped_column(JSON)
     model: Mapped[str] = mapped_column(String(100))
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+
+
+class StressTestRecord(Base):
+    """A saved evidence stress-test report."""
+    __tablename__ = "stress_tests"
+
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=new_id)
+    claim: Mapped[str] = mapped_column(Text)
+    data: Mapped[dict] = mapped_column(JSON)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())

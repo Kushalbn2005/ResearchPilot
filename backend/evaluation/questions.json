@@ -1,0 +1,1086 @@
+{
+    "_instructions": "Revised Phase 6 evaluation set based on the five uploaded PDFs. PDF page indices are 1-based viewer pages. Gold phrases are verbatim snippets from the cited pages. Review each phrase/page against your local PDF viewer before benchmarking; do not tune on split=test.",
+    "questions": [
+        {
+            "id": "q01",
+            "type": "factual",
+            "split": "dev",
+            "answerable": true,
+            "question": "What drought index is used in the STAT-LSTM study?",
+            "gold": [
+                {
+                    "file": "s12145-025-01813-0.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "SPEI-based drought prediction"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "SPEI"
+            ]
+        },
+        {
+            "id": "q02",
+            "type": "exact_term",
+            "split": "dev",
+            "answerable": true,
+            "question": "What RMSE does STAT-LSTM report for SPEI-12?",
+            "gold": [
+                {
+                    "file": "s12145-025-01813-0.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "RMSE = 0.267 for SPEI-12"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "0.267"
+            ]
+        },
+        {
+            "id": "q03",
+            "type": "factual",
+            "split": "dev",
+            "answerable": true,
+            "question": "Which three components are described in the STAT-LSTM method?",
+            "gold": [
+                {
+                    "file": "s12145-025-01813-0.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "feature aggregation module"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "feature aggregation",
+                "SA-TCN",
+                "LSTM"
+            ],
+            "_note": "The answer spans the abstract; verify each phrase if using strict exact-match evaluation."
+        },
+        {
+            "id": "q04",
+            "type": "factual",
+            "split": "dev",
+            "answerable": true,
+            "question": "Which drought index and timescales are used in the Southern Telangana study?",
+            "gold": [
+                {
+                    "file": "s44292-025-00070-6.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "SPEI computed at the 3-month (SPEI-3) and 6-month (SPEI-6) timescales"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "SPEI-3",
+                "SPEI-6"
+            ]
+        },
+        {
+            "id": "q05",
+            "type": "exact_term",
+            "split": "dev",
+            "answerable": true,
+            "question": "Which three forecasting models are compared in the Southern Telangana study?",
+            "gold": [
+                {
+                    "file": "s44292-025-00070-6.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "ARIMA, time delay neural network (TDNN), and support vector regression (SVR)"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "ARIMA",
+                "TDNN",
+                "SVR"
+            ]
+        },
+        {
+            "id": "q06",
+            "type": "exact_term",
+            "split": "dev",
+            "answerable": true,
+            "question": "What RMSE does SVR achieve for SPEI-3 in Hyderabad in the Southern Telangana study?",
+            "gold": [
+                {
+                    "file": "s44292-025-00070-6.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "0.318 (Hyderabad)"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "0.318"
+            ]
+        },
+        {
+            "id": "q07",
+            "type": "factual",
+            "split": "dev",
+            "answerable": true,
+            "question": "What years of monthly rainfall and temperature data were used in the Southern Telangana study?",
+            "gold": [
+                {
+                    "file": "s44292-025-00070-6.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "for the period 1988–2020"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "1988",
+                "2020"
+            ]
+        },
+        {
+            "id": "q08",
+            "type": "factual",
+            "split": "dev",
+            "answerable": true,
+            "question": "Which drought index is used by the Informer study?",
+            "gold": [
+                {
+                    "file": "atmosphere-14-00951-v2.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "Standardized Precipitation Evapotranspiration Index (SPEI)"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "SPEI"
+            ]
+        },
+        {
+            "id": "q09",
+            "type": "factual",
+            "split": "dev",
+            "answerable": true,
+            "question": "Which basin is used as the case study in the Informer paper?",
+            "gold": [
+                {
+                    "file": "atmosphere-14-00951-v2.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "Taking the Yellow River Basin as an example"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "Yellow River Basin"
+            ]
+        },
+        {
+            "id": "q10",
+            "type": "exact_term",
+            "split": "dev",
+            "answerable": true,
+            "question": "What four NSE values does Informer achieve on SPEI24 at the four meteorological stations?",
+            "gold": [
+                {
+                    "file": "atmosphere-14-00951-v2.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "0.968, 0.974, 0.972, and 0.986"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "0.968",
+                "0.974",
+                "0.972",
+                "0.986"
+            ]
+        },
+        {
+            "id": "q11",
+            "type": "exact_term",
+            "split": "dev",
+            "answerable": true,
+            "question": "Which SPEI timescales are evaluated in the Informer study?",
+            "gold": [
+                {
+                    "file": "atmosphere-14-00951-v2.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "SPEI1, SPEI3, SPEI6, SPEI9, SPEI12, and SPEI24"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "SPEI1",
+                "SPEI3",
+                "SPEI6",
+                "SPEI9",
+                "SPEI12",
+                "SPEI24"
+            ]
+        },
+        {
+            "id": "q12",
+            "type": "factual",
+            "split": "dev",
+            "answerable": true,
+            "question": "Which two baseline models are compared with Informer?",
+            "gold": [
+                {
+                    "file": "atmosphere-14-00951-v2.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "ARIMA, LSTM, and Informer models"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "ARIMA",
+                "LSTM"
+            ]
+        },
+        {
+            "id": "q13",
+            "type": "factual",
+            "split": "dev",
+            "answerable": true,
+            "question": "Which drought index and timescales are examined in the Nepal study?",
+            "gold": [
+                {
+                    "file": "s00704-026-06298-5.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "SPEI-1, SPEI-3, SPEI-6, SPEI-9, and SPEI-12"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "SPEI-1",
+                "SPEI-3",
+                "SPEI-6",
+                "SPEI-9",
+                "SPEI-12"
+            ]
+        },
+        {
+            "id": "q14",
+            "type": "exact_term",
+            "split": "dev",
+            "answerable": true,
+            "question": "How many meteorological stations are used in the Nepal study?",
+            "gold": [
+                {
+                    "file": "s00704-026-06298-5.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "Meteorological data from 59 stations across Nepal"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "59"
+            ]
+        },
+        {
+            "id": "q15",
+            "type": "factual",
+            "split": "dev",
+            "answerable": true,
+            "question": "What years are used for training and testing the Nepal LSTM model?",
+            "gold": [
+                {
+                    "file": "s00704-026-06298-5.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "1980 to 2013 used for training the LSTM model and data from 2014 to 2023 for testing"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "1980",
+                "2013",
+                "2014",
+                "2023"
+            ]
+        },
+        {
+            "id": "q16",
+            "type": "exact_term",
+            "split": "dev",
+            "answerable": true,
+            "question": "What evaluation metrics are reported for the Nepal model?",
+            "gold": [
+                {
+                    "file": "s00704-026-06298-5.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "coefficient of determination (R2), root mean square error (RMSE), and mean absolute error (MAE)"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "R2",
+                "RMSE",
+                "MAE"
+            ]
+        },
+        {
+            "id": "q17",
+            "type": "factual",
+            "split": "dev",
+            "answerable": true,
+            "question": "Which country and district are the focus of the Wavelet-LSTM study?",
+            "gold": [
+                {
+                    "file": "s42452-025-07649-z.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "Badeggi District in Niger State – Nigeria"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "Badeggi",
+                "Nigeria"
+            ]
+        },
+        {
+            "id": "q18",
+            "type": "factual",
+            "split": "dev",
+            "answerable": true,
+            "question": "Which drought index and timescales are used in the Wavelet-LSTM paper?",
+            "gold": [
+                {
+                    "file": "s42452-025-07649-z.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "standardized precipitation index (SPI) of various timescales of 3, 6, 9, and 12"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "SPI-3",
+                "SPI-6",
+                "SPI-9",
+                "SPI-12"
+            ]
+        },
+        {
+            "id": "q19",
+            "type": "exact_term",
+            "split": "dev",
+            "answerable": true,
+            "question": "Which models are used as baselines for W-LSTM?",
+            "gold": [
+                {
+                    "file": "s42452-025-07649-z.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "against the traditional ARIMA and conventional LSTM methods"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "ARIMA",
+                "LSTM"
+            ]
+        },
+        {
+            "id": "q20",
+            "type": "exact_term",
+            "split": "dev",
+            "answerable": true,
+            "question": "What maximum RMSE reduction does W-LSTM report compared with the benchmark models?",
+            "gold": [
+                {
+                    "file": "s42452-025-07649-z.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "reducing RMSE by up to 83.4%"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "83.4%"
+            ]
+        },
+        {
+            "id": "q21",
+            "type": "factual",
+            "split": "dev",
+            "answerable": true,
+            "question": "Which evaluation metrics are used in the Wavelet-LSTM study?",
+            "gold": [
+                {
+                    "file": "s42452-025-07649-z.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "RMSE, mean absolute error (MAE), mean absolute percentage error (MAPE), R2 and percentage of bias (PBIAS)"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "RMSE",
+                "MAE",
+                "MAPE",
+                "R2",
+                "PBIAS"
+            ]
+        },
+        {
+            "id": "q22",
+            "type": "comparison",
+            "split": "dev",
+            "answerable": true,
+            "question": "Which drought index does the Informer study use, and which index does the Wavelet-LSTM study use?",
+            "gold": [
+                {
+                    "file": "atmosphere-14-00951-v2.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "Standardized Precipitation Evapotranspiration Index (SPEI)"
+                    ]
+                },
+                {
+                    "file": "s42452-025-07649-z.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "standardized precipitation index (SPI)"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "SPEI",
+                "SPI"
+            ]
+        },
+        {
+            "id": "q23",
+            "type": "comparison",
+            "split": "dev",
+            "answerable": true,
+            "question": "Which models are compared in the Southern Telangana study and the Informer study, respectively?",
+            "gold": [
+                {
+                    "file": "s44292-025-00070-6.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "ARIMA, time delay neural network (TDNN), and support vector regression (SVR)"
+                    ]
+                },
+                {
+                    "file": "atmosphere-14-00951-v2.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "ARIMA, LSTM, and Informer models"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "ARIMA",
+                "TDNN",
+                "SVR",
+                "LSTM",
+                "Informer"
+            ]
+        },
+        {
+            "id": "q24",
+            "type": "comparison",
+            "split": "dev",
+            "answerable": true,
+            "question": "Compare the primary proposed approach in the STAT-LSTM and Wavelet-LSTM papers.",
+            "gold": [
+                {
+                    "file": "s12145-025-01813-0.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "STAT-LSTM"
+                    ]
+                },
+                {
+                    "file": "s42452-025-07649-z.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "W-LSTM model"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "STAT-LSTM",
+                "W-LSTM"
+            ]
+        },
+        {
+            "id": "q25",
+            "type": "comparison",
+            "split": "dev",
+            "answerable": true,
+            "question": "Which paper studies Nepal and which studies Southern Telangana?",
+            "gold": [
+                {
+                    "file": "s00704-026-06298-5.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "forecasting of drought in Nepal"
+                    ]
+                },
+                {
+                    "file": "s44292-025-00070-6.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "drought in Southern Telangana"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "Nepal",
+                "Southern Telangana"
+            ]
+        },
+        {
+            "id": "q26",
+            "type": "comparison",
+            "split": "dev",
+            "answerable": true,
+            "question": "Compare the time periods used by the Southern Telangana and Wavelet-LSTM studies.",
+            "gold": [
+                {
+                    "file": "s44292-025-00070-6.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "for the period 1988–2020"
+                    ]
+                },
+                {
+                    "file": "s42452-025-07649-z.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "from January 1968 to January 2018"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "1988",
+                "2020",
+                "1968",
+                "2018"
+            ]
+        },
+        {
+            "id": "q27",
+            "type": "comparison",
+            "split": "dev",
+            "answerable": true,
+            "question": "Which study uses 59 stations across Nepal, and which uses four districts in Southern Telangana?",
+            "gold": [
+                {
+                    "file": "s00704-026-06298-5.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "59 stations across Nepal"
+                    ]
+                },
+                {
+                    "file": "s44292-025-00070-6.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "Hyderabad, Mahbubnagar, Nalgonda, and Rangareddy"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "59",
+                "Hyderabad",
+                "Mahbubnagar",
+                "Nalgonda",
+                "Rangareddy"
+            ]
+        },
+        {
+            "id": "q28",
+            "type": "comparison",
+            "split": "dev",
+            "answerable": true,
+            "question": "Which two studies explicitly report better performance at longer drought-index timescales?",
+            "gold": [
+                {
+                    "file": "atmosphere-14-00951-v2.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "forecasting accuracies ... improved gradually, reaching the best accuracy on the 24-month timescale"
+                    ]
+                },
+                {
+                    "file": "s00704-026-06298-5.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "SPEI-12 predictions showing the highest accuracy and SPEI-3 the lowest"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "24-month",
+                "SPEI-12",
+                "SPEI-3"
+            ]
+        },
+        {
+            "id": "q29",
+            "type": "factual",
+            "split": "dev",
+            "answerable": true,
+            "question": "What method is used to group Nepal's meteorological stations into climatic regions?",
+            "gold": [
+                {
+                    "file": "s00704-026-06298-5.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "grouped into seven homogeneous climatic regions using K-means clustering"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "K-means",
+                "seven"
+            ]
+        },
+        {
+            "id": "q30",
+            "type": "factual",
+            "split": "dev",
+            "answerable": true,
+            "question": "What transformation is coupled with LSTM in the Wavelet-LSTM study?",
+            "gold": [
+                {
+                    "file": "s42452-025-07649-z.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "discrete wavelet transform (DWT) coupled with the long-short-term memory (LSTM) model"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "discrete wavelet transform",
+                "LSTM"
+            ]
+        },
+        {
+            "id": "q31",
+            "type": "exact_term",
+            "split": "test",
+            "answerable": true,
+            "question": "What is the R2 value reported by STAT-LSTM for SPEI-12?",
+            "gold": [
+                {
+                    "file": "s12145-025-01813-0.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "R2 = 0.934 for SPEI-12"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "0.934"
+            ]
+        },
+        {
+            "id": "q32",
+            "type": "exact_term",
+            "split": "test",
+            "answerable": true,
+            "question": "What RMSE does SVR achieve for SPEI-6 in Rangareddy?",
+            "gold": [
+                {
+                    "file": "s44292-025-00070-6.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "0.424"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "0.424"
+            ]
+        },
+        {
+            "id": "q33",
+            "type": "exact_term",
+            "split": "test",
+            "answerable": true,
+            "question": "What NSE value does Informer report for SPEI24 at the fourth station?",
+            "gold": [
+                {
+                    "file": "atmosphere-14-00951-v2.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "0.968, 0.974, 0.972, and 0.986"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "0.986"
+            ]
+        },
+        {
+            "id": "q34",
+            "type": "factual",
+            "split": "test",
+            "answerable": true,
+            "question": "How does Informer perform relative to ARIMA and LSTM across the evaluated timescales?",
+            "gold": [
+                {
+                    "file": "atmosphere-14-00951-v2.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "more accurate than the ARIMA and LSTM models on all timescales"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "more accurate",
+                "all timescales"
+            ]
+        },
+        {
+            "id": "q35",
+            "type": "exact_term",
+            "split": "test",
+            "answerable": true,
+            "question": "What is the highest reported R2 range endpoint for SPEI-12 across Nepal stations?",
+            "gold": [
+                {
+                    "file": "s00704-026-06298-5.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "0.70–0.90 for SPEI-12"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "0.90"
+            ]
+        },
+        {
+            "id": "q36",
+            "type": "exact_term",
+            "split": "test",
+            "answerable": true,
+            "question": "What RMSE reduction does W-LSTM report for SPI-12 compared with ARIMA?",
+            "gold": [
+                {
+                    "file": "s42452-025-07649-z.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "56.2% RMSE reduction over ARIMA"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "56.2%"
+            ]
+        },
+        {
+            "id": "q37",
+            "type": "factual",
+            "split": "test",
+            "answerable": true,
+            "question": "What input data period is used by the Wavelet-LSTM study?",
+            "gold": [
+                {
+                    "file": "s42452-025-07649-z.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "monthly precipitation data from January 1968 to January 2018"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "January 1968",
+                "January 2018"
+            ]
+        },
+        {
+            "id": "q38",
+            "type": "comparison",
+            "split": "test",
+            "answerable": true,
+            "question": "Which study reports RMSE and R2 values for SPEI-12, and what is the reported model result in each?",
+            "gold": [
+                {
+                    "file": "s12145-025-01813-0.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "RMSE = 0.267 for SPEI-12"
+                    ]
+                },
+                {
+                    "file": "s00704-026-06298-5.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "SPEI-12 predictions showing the highest accuracy"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "0.267",
+                "highest accuracy"
+            ]
+        },
+        {
+            "id": "q39",
+            "type": "comparison",
+            "split": "test",
+            "answerable": true,
+            "question": "Compare the reported drought indices in the Southern Telangana and Nepal papers.",
+            "gold": [
+                {
+                    "file": "s44292-025-00070-6.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "SPEI computed at the 3-month (SPEI-3) and 6-month (SPEI-6) timescales"
+                    ]
+                },
+                {
+                    "file": "s00704-026-06298-5.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "SPEI-1, SPEI-3, SPEI-6, SPEI-9, and SPEI-12"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "SPEI-3",
+                "SPEI-6",
+                "SPEI-1",
+                "SPEI-12"
+            ]
+        },
+        {
+            "id": "q40",
+            "type": "factual",
+            "split": "test",
+            "answerable": true,
+            "question": "What percentage decrease in SPEI values does the Nepal study report at shorter timescales?",
+            "gold": [
+                {
+                    "file": "s00704-026-06298-5.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "approximately 50%"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "50%"
+            ]
+        },
+        {
+            "id": "q41",
+            "type": "exact_term",
+            "split": "test",
+            "answerable": true,
+            "question": "What PBIAS value does W-LSTM report for SPI-12?",
+            "gold": [
+                {
+                    "file": "s42452-025-07649-z.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "best PBIAS value of 2.078"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "2.078"
+            ]
+        },
+        {
+            "id": "q42",
+            "type": "comparison",
+            "split": "test",
+            "answerable": true,
+            "question": "Which study compares Informer against ARIMA and LSTM, and which compares W-LSTM against ARIMA and LSTM?",
+            "gold": [
+                {
+                    "file": "atmosphere-14-00951-v2.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "ARIMA, LSTM, and Informer models"
+                    ]
+                },
+                {
+                    "file": "s42452-025-07649-z.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "against the traditional ARIMA and conventional LSTM methods"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "Informer",
+                "W-LSTM",
+                "ARIMA",
+                "LSTM"
+            ]
+        },
+        {
+            "id": "q43",
+            "type": "comparison",
+            "split": "test",
+            "answerable": true,
+            "question": "Compare the geographic study settings of the Informer and Wavelet-LSTM papers.",
+            "gold": [
+                {
+                    "file": "atmosphere-14-00951-v2.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "Yellow River Basin"
+                    ]
+                },
+                {
+                    "file": "s42452-025-07649-z.pdf",
+                    "pages": [
+                        1
+                    ],
+                    "phrases": [
+                        "Badeggi District in Niger State – Nigeria"
+                    ]
+                }
+            ],
+            "answer_keywords": [
+                "Yellow River Basin",
+                "Badeggi",
+                "Nigeria"
+            ]
+        },
+        {
+            "id": "q44",
+            "type": "unanswerable",
+            "split": "test",
+            "answerable": false,
+            "question": "What exact drought severity will occur in Raichur, Karnataka, in July 2027 according to these five papers?",
+            "_note": "No gold object by design. Confirm the indexed papers do not explicitly answer this future local forecast."
+        },
+        {
+            "id": "q45",
+            "type": "unanswerable",
+            "split": "test",
+            "answerable": false,
+            "question": "Which of these five papers reports model accuracy on the ImageNet dataset?",
+            "_note": "No gold object by design. ImageNet is unrelated to the supplied drought-prediction papers."
+        }
+    ]
+}

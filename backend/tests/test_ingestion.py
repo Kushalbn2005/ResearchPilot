@@ -6,7 +6,7 @@ import pymupdf as fitz
 import pytest
 
 from app.ingestion.chunk import chunk_blocks
-from app.ingestion.extract import Block, extract_blocks
+from app.ingestion.extract import Block, clean_text, extract_blocks
 from app.ingestion.validate import InvalidPDF, validate_pdf
 
 
@@ -48,3 +48,9 @@ def test_chunks_respect_sections_and_pages():
     assert all(len(c.text.split()) <= 300 for c in chunks)
     assert chunks[0].page_start == 1 and chunks[-1].section == "Methods"
     assert [c.chunk_index for c in chunks] == list(range(len(chunks)))
+
+
+def test_clean_text_removes_nul_and_control_characters():
+    assert clean_text("rain\x00fall\x0b data") == "rainfall data"
+    assert clean_text("line one\nline two\tend") == "line one\nline two\tend"  # normal whitespace kept
+    assert "\x00" not in clean_text("\x00\x00abc")

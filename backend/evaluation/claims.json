@@ -1,0 +1,178 @@
+{
+    "_instructions": "Revised Phase 5 claims set for the five uploaded drought-prediction PDFs. Verdicts are provisional; verify against full papers. Use supported | challenged | mixed | insufficient. expected_direct_conflict is false unless a paper explicitly states a directly contradictory result; lack of evidence or non-comparability alone is not a direct conflict.",
+    "claims": [
+        {
+            "id": "c01",
+            "claim": "SVR outperforms ARIMA and TDNN for SPEI forecasting in the Southern Telangana study.",
+            "expected": "supported",
+            "documents": [
+                "s44292-025-00070-6.pdf"
+            ],
+            "expected_direct_conflict": false,
+            "_note": "Provisional gold verdict based on the supplied papers' abstracts/pages reviewed. Check the full paper and your engine's evidence before using this as a scored benchmark."
+        },
+        {
+            "id": "c02",
+            "claim": "Informer is more accurate than ARIMA and LSTM on all timescales evaluated in the Yellow River Basin study.",
+            "expected": "supported",
+            "documents": [
+                "atmosphere-14-00951-v2.pdf"
+            ],
+            "expected_direct_conflict": false,
+            "_note": "Provisional gold verdict based on the supplied papers' abstracts/pages reviewed. Check the full paper and your engine's evidence before using this as a scored benchmark."
+        },
+        {
+            "id": "c03",
+            "claim": "The Nepal LSTM model performs better at SPEI-12 than at SPEI-3.",
+            "expected": "supported",
+            "documents": [
+                "s00704-026-06298-5.pdf"
+            ],
+            "expected_direct_conflict": false,
+            "_note": "Provisional gold verdict based on the supplied papers' abstracts/pages reviewed. Check the full paper and your engine's evidence before using this as a scored benchmark."
+        },
+        {
+            "id": "c04",
+            "claim": "W-LSTM outperforms both ARIMA and conventional LSTM in the Badeggi SPI forecasting experiments.",
+            "expected": "supported",
+            "documents": [
+                "s42452-025-07649-z.pdf"
+            ],
+            "expected_direct_conflict": false,
+            "_note": "Provisional gold verdict based on the supplied papers' abstracts/pages reviewed. Check the full paper and your engine's evidence before using this as a scored benchmark."
+        },
+        {
+            "id": "c05",
+            "claim": "STAT-LSTM reports an RMSE of 0.267 for SPEI-12.",
+            "expected": "supported",
+            "documents": [
+                "s12145-025-01813-0.pdf"
+            ],
+            "expected_direct_conflict": false,
+            "_note": "Provisional gold verdict based on the supplied papers' abstracts/pages reviewed. Check the full paper and your engine's evidence before using this as a scored benchmark."
+        },
+        {
+            "id": "c06",
+            "claim": "The Southern Telangana study uses SPEI-3 and SPEI-6.",
+            "expected": "supported",
+            "documents": [
+                "s44292-025-00070-6.pdf"
+            ],
+            "expected_direct_conflict": false,
+            "_note": "Provisional gold verdict based on the supplied papers' abstracts/pages reviewed. Check the full paper and your engine's evidence before using this as a scored benchmark."
+        },
+        {
+            "id": "c07",
+            "claim": "The Informer study evaluates SPEI1, SPEI3, SPEI6, SPEI9, SPEI12 and SPEI24.",
+            "expected": "supported",
+            "documents": [
+                "atmosphere-14-00951-v2.pdf"
+            ],
+            "expected_direct_conflict": false,
+            "_note": "Provisional gold verdict based on the supplied papers' abstracts/pages reviewed. Check the full paper and your engine's evidence before using this as a scored benchmark."
+        },
+        {
+            "id": "c08",
+            "claim": "The Nepal study uses meteorological data from 59 stations and K-means to group them into seven climatic regions.",
+            "expected": "supported",
+            "documents": [
+                "s00704-026-06298-5.pdf"
+            ],
+            "expected_direct_conflict": false,
+            "_note": "Provisional gold verdict based on the supplied papers' abstracts/pages reviewed. Check the full paper and your engine's evidence before using this as a scored benchmark."
+        },
+        {
+            "id": "c09",
+            "claim": "The Wavelet-LSTM study uses SPI rather than SPEI as its drought index.",
+            "expected": "supported",
+            "documents": [
+                "s42452-025-07649-z.pdf"
+            ],
+            "expected_direct_conflict": false,
+            "_note": "Provisional gold verdict based on the supplied papers' abstracts/pages reviewed. Check the full paper and your engine's evidence before using this as a scored benchmark."
+        },
+        {
+            "id": "c10",
+            "claim": "LSTM is always the best model for drought forecasting across every region, index and experimental setup.",
+            "expected": "insufficient",
+            "documents": [
+                "s12145-025-01813-0.pdf",
+                "s44292-025-00070-6.pdf",
+                "atmosphere-14-00951-v2.pdf",
+                "s00704-026-06298-5.pdf",
+                "s42452-025-07649-z.pdf"
+            ],
+            "expected_direct_conflict": false,
+            "_note": "Provisional gold verdict based on the supplied papers' abstracts/pages reviewed. Check the full paper and your engine's evidence before using this as a scored benchmark."
+        },
+        {
+            "id": "c11",
+            "claim": "A lower RMSE in one paper proves its model is better than models in all other papers, regardless of dataset or forecast horizon.",
+            "expected": "challenged",
+            "documents": [
+                "s12145-025-01813-0.pdf",
+                "s44292-025-00070-6.pdf",
+                "atmosphere-14-00951-v2.pdf",
+                "s00704-026-06298-5.pdf",
+                "s42452-025-07649-z.pdf"
+            ],
+            "expected_direct_conflict": false,
+            "_note": "Provisional gold verdict based on the supplied papers' abstracts/pages reviewed. Check the full paper and your engine's evidence before using this as a scored benchmark."
+        },
+        {
+            "id": "c12",
+            "claim": "The five papers establish the exact drought severity that will occur in Raichur, Karnataka, in July 2027.",
+            "expected": "insufficient",
+            "documents": [
+                "s12145-025-01813-0.pdf",
+                "s44292-025-00070-6.pdf",
+                "atmosphere-14-00951-v2.pdf",
+                "s00704-026-06298-5.pdf",
+                "s42452-025-07649-z.pdf"
+            ],
+            "expected_direct_conflict": false,
+            "_note": "Provisional gold verdict based on the supplied papers' abstracts/pages reviewed. Check the full paper and your engine's evidence before using this as a scored benchmark."
+        },
+        {
+            "id": "c13",
+            "claim": "SPI and SPEI are identical and can be treated as interchangeable in every comparison.",
+            "expected": "challenged",
+            "documents": [
+                "s44292-025-00070-6.pdf",
+                "atmosphere-14-00951-v2.pdf",
+                "s42452-025-07649-z.pdf",
+                "s00704-026-06298-5.pdf"
+            ],
+            "expected_direct_conflict": false,
+            "_note": "Provisional gold verdict based on the supplied papers' abstracts/pages reviewed. Check the full paper and your engine's evidence before using this as a scored benchmark."
+        },
+        {
+            "id": "c14",
+            "claim": "All five papers use the same drought index, geographic region and forecast timescales.",
+            "expected": "challenged",
+            "documents": [
+                "s12145-025-01813-0.pdf",
+                "s44292-025-00070-6.pdf",
+                "atmosphere-14-00951-v2.pdf",
+                "s00704-026-06298-5.pdf",
+                "s42452-025-07649-z.pdf"
+            ],
+            "expected_direct_conflict": false,
+            "_note": "Provisional gold verdict based on the supplied papers' abstracts/pages reviewed. Check the full paper and your engine's evidence before using this as a scored benchmark."
+        },
+        {
+            "id": "c15",
+            "claim": "The supplied papers prove that adding NDVI improves every drought forecasting model in every region.",
+            "expected": "insufficient",
+            "documents": [
+                "s12145-025-01813-0.pdf",
+                "s44292-025-00070-6.pdf",
+                "atmosphere-14-00951-v2.pdf",
+                "s00704-026-06298-5.pdf",
+                "s42452-025-07649-z.pdf"
+            ],
+            "expected_direct_conflict": false,
+            "_note": "Provisional gold verdict based on the supplied papers' abstracts/pages reviewed. Check the full paper and your engine's evidence before using this as a scored benchmark."
+        }
+    ]
+}

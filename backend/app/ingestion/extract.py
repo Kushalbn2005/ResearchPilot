@@ -15,6 +15,15 @@ SECTION_RE = re.compile(
 STOP_SECTIONS = {"references", "bibliography"}  # reference lists pollute retrieval
 
 
+_CONTROL = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]")
+
+
+def clean_text(s: str) -> str:
+    """Remove NUL and other control characters (PDFs with unmapped glyphs produce them; Postgres rejects
+    NUL in text columns) and any broken unicode, keeping normal newlines and tabs."""
+    return _CONTROL.sub("", s.encode("utf-8", "ignore").decode("utf-8"))
+
+
 @dataclass
 class Block:
     page: int
@@ -44,7 +53,7 @@ def extract_blocks(data: bytes) -> tuple[str | None, list[Block], bool]:
                 continue
             lines, sizes, bold_chars, total_chars = [], [], 0, 0
             for line in b["lines"]:
-                txt = "".join(s["text"] for s in line["spans"]).strip()
+                txt = clean_text("".join(s["text"] for s in line["spans"])).strip()
                 if txt:
                     lines.append(txt)
                 for s in line["spans"]:
